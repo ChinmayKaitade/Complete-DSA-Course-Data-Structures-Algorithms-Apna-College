@@ -5,6 +5,7 @@ Welcome to my DSA learning repository! This project documents my complete journe
 ---
 
 ## 📌 Overview: Data Structures Hierarchy
+
 ```
 
 Data Structures
@@ -30,21 +31,22 @@ Data Structures
 ## 📚 Lecture 01: Flowchart & Pseudocode + Installation
 
 ### 🎯 Key Highlights
-* **Logic Building:** Breaking down problem statements using intuitive **Flowcharts** and structured **Pseudocode**.
-* **Environment Setup:** Installing and configuring **VS Code**, `g++` compiler, and essential extensions for modern C++ development.
-* **Basic Components:** Understanding standard flowchart symbols (Start/End, Input/Output, Decision, Processing).
+
+- **Logic Building:** Breaking down problem statements using intuitive **Flowcharts** and structured **Pseudocode**.
+- **Environment Setup:** Installing and configuring **VS Code**, `g++` compiler, and essential extensions for modern C++ development.
+- **Basic Components:** Understanding standard flowchart symbols (Start/End, Input/Output, Decision, Processing).
 
 ---
 
 ## 🗺️ Learning Roadmap
 
-| # | Topic | Status |
-| :---: | :--- | :---: |
-| **01** | **Flowcharts, Pseudocode & Setup** | ✅ Completed |
-| **02** | Variables, Data Types & Operators | ⏳ In Progress |
-| **03** | Conditional Statements & Loops | 📅 Upcoming |
-| **04** | Patterns (Logic Building) | 📅 Upcoming |
-| **05** | Functions & Scope | 📅 Upcoming |
+|   #    | Topic                              |     Status     |
+| :----: | :--------------------------------- | :------------: |
+| **01** | **Flowcharts, Pseudocode & Setup** |  ✅ Completed  |
+| **02** | Variables, Data Types & Operators  | ⏳ In Progress |
+| **03** | Conditional Statements & Loops     |  📅 Upcoming   |
+| **04** | Patterns (Logic Building)          |  📅 Upcoming   |
+| **05** | Functions & Scope                  |  📅 Upcoming   |
 
 ---
 
@@ -56,6 +58,6 @@ Data Structures
 
 ---
 
-⭐ *If you find this repository helpful, consider leaving a star!*
+# 📘 Lecture 02: Variables, Data Types & Operators
 
-
+⭐ _If you find this repository helpful, consider leaving a star!_
