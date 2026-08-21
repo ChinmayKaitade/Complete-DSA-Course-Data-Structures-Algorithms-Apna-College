@@ -60,4 +60,6 @@ Data Structures
 
 # 📘 Lecture 02: Variables, Data Types & Operators
 
+# 📘 Lecture 03: Conditional Statements & Loops
+
 ⭐ _If you find this repository helpful, consider leaving a star!_
