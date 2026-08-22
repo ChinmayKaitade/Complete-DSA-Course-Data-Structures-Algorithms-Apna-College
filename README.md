@@ -62,4 +62,6 @@ Data Structures
 
 # 📘 Lecture 03: Conditional Statements & Loops
 
+# 📘 Lecture 04: Patterns
+
 ⭐ _If you find this repository helpful, consider leaving a star!_
