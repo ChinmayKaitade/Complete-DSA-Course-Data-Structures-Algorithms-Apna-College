@@ -66,4 +66,6 @@ Data Structures
 
 # 📘 Lecture 05: Functions
 
+# 📘 Lecture 06: Binary Number System
+
 ⭐ _If you find this repository helpful, consider leaving a star!_
