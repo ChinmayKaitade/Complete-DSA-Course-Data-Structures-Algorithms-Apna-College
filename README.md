@@ -64,4 +64,6 @@ Data Structures
 
 # 📘 Lecture 04: Patterns
 
+# 📘 Lecture 05: Functions
+
 ⭐ _If you find this repository helpful, consider leaving a star!_
