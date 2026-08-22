@@ -160,3 +160,111 @@ int main() {
 }
 
 ```
+
+## 📝 Homework Solutions: Functions & Number Theory
+
+Optimized C++ implementations for primality testing, range-based prime generation, and the $n^{\text{th}}$ Fibonacci number calculation.
+
+---
+
+### 🔹 1. Check if a Number is Prime
+
+**Time Complexity:** $O(\sqrt{N})$ | **Space Complexity:** $O(1)$
+
+```cpp
+#include <iostream>
+using namespace std;
+
+bool isPrime(int n) {
+    if (n <= 1) return false;
+
+    // Check divisibility up to sqrt(n)
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    int num = 29;
+    cout << num << (isPrime(num) ? " is Prime" : " is Not Prime") << endl;
+    return 0;
+}
+```
+
+---
+
+### 🔹 2. Print All Prime Numbers from 2 to $N$
+
+Reuses `isPrime(int n)` as a helper function to iterate through the range.
+
+**Time Complexity:** $O(N\sqrt{N})$ | **Space Complexity:** $O(1)$
+
+```cpp
+#include <iostream>
+using namespace std;
+
+bool isPrime(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+void printPrimes(int n) {
+    for (int i = 2; i <= n; i++) {
+        if (isPrime(i)) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+}
+
+int main() {
+    int n = 50;
+    cout << "Prime numbers from 2 to " << n << ":\n";
+    printPrimes(n);
+    return 0;
+}
+
+```
+
+---
+
+### 🔹 3. Print $n^{\text{th}}$ Fibonacci Number
+
+Fibonacci series: $0, 1, 1, 2, 3, 5, 8, 13, 21, \dots$ where $F(0) = 0$ and $F(1) = 1$.
+
+**Time Complexity:** $O(N)$ | **Space Complexity:** $O(1)$
+
+```cpp
+#include <iostream>
+using namespace std;
+
+long long nthFibonacci(int n) {
+    if (n <= 0) return 0;
+    if (n == 1) return 1;
+
+    long long prev2 = 0; // F(0)
+    long long prev1 = 1; // F(1)
+    long long current = 0;
+
+    for (int i = 2; i <= n; i++) {
+        current = prev1 + prev2;
+        prev2 = prev1;
+        prev1 = current;
+    }
+
+    return current;
+}
+
+int main() {
+    int n = 8;
+    cout << n << "th Fibonacci term = " << nthFibonacci(n) << endl; // Output: 21
+    return 0;
+}
+
+```
