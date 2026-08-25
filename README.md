@@ -68,4 +68,6 @@ Data Structures
 
 # 📘 Lecture 06: Binary Number System
 
+# 📘 Lecture 07: Bitwise Operators, Data Type Modifiers & More
+
 ⭐ _If you find this repository helpful, consider leaving a star!_
