@@ -22,24 +22,24 @@ Data Structures
         ├── Tree
         ├── Graph
         └── Hash Table / Set
+
 ```
-
-
 
 ---
 
 ## 🗺️ Learning Roadmap
 
-| #      | Topic                                       | Status         |
-| ------ | ------------------------------------------- | -------------- |
-| **01** | **Flowcharts, Pseudocode & Setup**          | ✅ Completed   |
-| **02** | **Variables, Data Types & Operators**       | ✅ Completed   |
-| **03** | **Conditional Statements & Loops**          | ✅ Completed   |
-| **04** | **Patterns (Logic Building)**               | ✅ Completed   |
-| **05** | **Functions, Scope & Memory Stack**         | ✅ Completed   |
-| **06** | **Binary Number System & Conversions**      | ✅ Completed   |
-| **07** | **Bitwise Operators & Data Type Modifiers** | ✅ Completed   |
-| **08** | Arrays (Part 1)                             | ⏳ In Progress |
+| #      | Topic                                             | Status         |
+| ------ | ------------------------------------------------- | -------------- |
+| **01** | **Flowcharts, Pseudocode & Setup**                | ✅ Completed   |
+| **02** | **Variables, Data Types & Operators**             | ✅ Completed   |
+| **03** | **Conditional Statements & Loops**                | ✅ Completed   |
+| **04** | **Patterns (Logic Building)**                     | ✅ Completed   |
+| **05** | **Functions, Scope & Memory Stack**               | ✅ Completed   |
+| **06** | **Binary Number System & Conversions**            | ✅ Completed   |
+| **07** | **Bitwise Operators & Data Type Modifiers**       | ✅ Completed   |
+| **08** | **Arrays (Part 1 - Search, Reverse & Reference)** | ✅ Completed   |
+| **09** | Arrays (Part 2 - Vectors & Kadane's Algorithm)    | ⏳ In Progress |
 
 ---
 
@@ -224,7 +224,62 @@ bool isPowerOfTwo = (n > 0) && ((n & (n - 1)) == 0);
 
 ---
 
+## 📘 Lecture 08: Array Data Structure (Part 1)
+
+### 1. Core Properties & Syntax
+
+- **Linear & Homogeneous:** Holds elements of the exact same data type in contiguous memory.
+- **0-Indexed:** First element sits at index `0`, last element at index `size - 1`.
+
+```cpp
+int arr[5] = {10, 20, 30, 40, 50};
+int size = sizeof(arr) / sizeof(arr[0]);
+
+```
+
+### 2. Smallest & Largest Element in an Array
+
+Using `INT_MAX` and `INT_MIN` from `<climits>`:
+
+```cpp
+int smallest = INT_MAX, largest = INT_MIN;
+for (int i = 0; i < size; i++) {
+    smallest = min(smallest, arr[i]);
+    largest = max(largest, arr[i]);
+}
+
+```
+
+### 3. Arrays and Pass by Reference
+
+Arrays decay to a base pointer when passed to functions. Any modification directly mutates the original array in memory.
+
+### 4. Linear Search ($O(N)$)
+
+```cpp
+int linearSearch(int arr[], int size, int target) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == target) return i;
+    }
+    return -1;
+}
+
+```
+
+### 5. Reverse an Array (2-Pointer Approach - $O(N)$)
+
+```cpp
+void reverseArray(int arr[], int size) {
+    int start = 0, end = size - 1;
+    while (start < end) {
+        swap(arr[start], arr[end]);
+        start++;
+        end--;
+    }
+}
+
+```
+
+---
+
 ⭐ _If you find this repository helpful, consider leaving a star!_
-
-
-
