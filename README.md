@@ -22,24 +22,24 @@ Data Structures
         ├── Tree
         ├── Graph
         └── Hash Table / Set
-
 ```
 
 ---
 
 ## 🗺️ Learning Roadmap
 
-| #      | Topic                                             | Status         |
-| ------ | ------------------------------------------------- | -------------- |
-| **01** | **Flowcharts, Pseudocode & Setup**                | ✅ Completed   |
-| **02** | **Variables, Data Types & Operators**             | ✅ Completed   |
-| **03** | **Conditional Statements & Loops**                | ✅ Completed   |
-| **04** | **Patterns (Logic Building)**                     | ✅ Completed   |
-| **05** | **Functions, Scope & Memory Stack**               | ✅ Completed   |
-| **06** | **Binary Number System & Conversions**            | ✅ Completed   |
-| **07** | **Bitwise Operators & Data Type Modifiers**       | ✅ Completed   |
-| **08** | **Arrays (Part 1 - Search, Reverse & Reference)** | ✅ Completed   |
-| **09** | Arrays (Part 2 - Vectors & Kadane's Algorithm)    | ⏳ In Progress |
+| #      | Topic                                               | Status         |
+| ------ | --------------------------------------------------- | -------------- |
+| **01** | **Flowcharts, Pseudocode & Setup**                  | ✅ Completed   |
+| **02** | **Variables, Data Types & Operators**               | ✅ Completed   |
+| **03** | **Conditional Statements & Loops**                  | ✅ Completed   |
+| **04** | **Patterns (Logic Building)**                       | ✅ Completed   |
+| **05** | **Functions, Scope & Memory Stack**                 | ✅ Completed   |
+| **06** | **Binary Number System & Conversions**              | ✅ Completed   |
+| **07** | **Bitwise Operators & Data Type Modifiers**         | ✅ Completed   |
+| **08** | **Arrays (Part 1 - Search, Reverse & Reference)**   | ✅ Completed   |
+| **09** | **Vectors in C++ (Arrays Part 2 & Dynamic Memory)** | ✅ Completed   |
+| **10** | Kadane's Algorithm & Subarrays                      | ⏳ In Progress |
 
 ---
 
@@ -282,4 +282,67 @@ void reverseArray(int arr[], int size) {
 
 ---
 
+## 📘 Lecture 09: Vectors in C++ (Arrays Part 2)
+
+### 1. Vector Initialization & Syntax
+
+Vectors are sequence containers representing dynamic arrays that automatically handle their own storage allocation.
+
+```cpp
+#include <vector>
+
+vector<int> vec1;             // Empty vector
+vector<int> vec2 = {1, 2, 3}; // Initializer list
+vector<int> vec3(3, 0);       // Size 3, initialized with 0 -> {0, 0, 0}
+
+```
+
+### 2. Common Vector Functions
+
+| Method               | Description                                                 | Time Complexity  |
+| -------------------- | ----------------------------------------------------------- | ---------------- |
+| `vec.size()`         | Returns current number of elements                          | $O(1)$           |
+| `vec.capacity()`     | Returns total allocated memory capacity                     | $O(1)$           |
+| `vec.push_back(val)` | Inserts an element at the back (doubles capacity when full) | $O(1)$ amortized |
+| `vec.pop_back()`     | Deletes the last element                                    | $O(1)$           |
+| `vec.front()`        | Returns reference to the first element                      | $O(1)$           |
+| `vec.back()`         | Returns reference to the last element                       | $O(1)$           |
+| `vec.at(idx)`        | Bounds-checked element access                               | $O(1)$           |
+
+### 3. Static vs. Dynamic Memory Allocation
+
+- **Static Allocation (Arrays):** Memory allocated on the **Stack** at compile-time with a fixed, immutable size.
+- **Dynamic Allocation (Vectors):** Memory allocated on the **Heap** at run-time, automatically expanding as elements are pushed.
+
+### 4. Size vs. Capacity Growth
+
+When `vec.size() == vec.capacity()`, calling `push_back()` triggers an internal reallocation:
+
+- It allocates a new memory block with **$2\times$ capacity**.
+- Copies existing elements over and deallocates the previous block.
+
+### 5. Algorithmic Problem: Single Number (LeetCode 136)
+
+Given an array where every element appears twice except one, find the single element using XOR properties:
+
+- $n \oplus n = 0$
+- $n \oplus 0 = n$
+
+```cpp
+int singleNumber(const vector<int>& nums) {
+    int uniqueVal = 0;
+    for (int val : nums) {
+        uniqueVal ^= val;
+    }
+    return uniqueVal;
+}
+
+```
+
+---
+
 ⭐ _If you find this repository helpful, consider leaving a star!_
+
+```
+
+```
