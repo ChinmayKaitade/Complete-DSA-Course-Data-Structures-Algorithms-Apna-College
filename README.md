@@ -22,6 +22,7 @@ Data Structures
         ├── Tree
         ├── Graph
         └── Hash Table / Set
+
 ```
 
 ---
@@ -39,7 +40,8 @@ Data Structures
 | **07** | **Bitwise Operators & Data Type Modifiers**         | ✅ Completed   |
 | **08** | **Arrays (Part 1 - Search, Reverse & Reference)**   | ✅ Completed   |
 | **09** | **Vectors in C++ (Arrays Part 2 & Dynamic Memory)** | ✅ Completed   |
-| **10** | Kadane's Algorithm & Subarrays                      | ⏳ In Progress |
+| **10** | **Kadane's Algorithm & Maximum Subarray Sum**       | ✅ Completed   |
+| **11** | Majority Element & Pair Sum Problems                | ⏳ In Progress |
 
 ---
 
@@ -341,8 +343,111 @@ int singleNumber(const vector<int>& nums) {
 
 ---
 
+## 📘 Lecture 10: Kadane's Algorithm & Maximum Subarray Sum
+
+> 📌 **DSA Concept:** Arrays & Dynamic Programming
+> 🎯 **Problem:** Find the maximum sum of a contiguous subarray (LeetCode #53).
+
+### 1. What is a Subarray?
+
+A **subarray** is a contiguous, unbroken slice of an array.
+
+For an array `[1, 2, 3, 4, 5]`, all possible contiguous subarrays are:
+
+```text
+[1], [2], [3], [4], [5]
+[1, 2], [2, 3], [3, 4], [4, 5]
+[1, 2, 3], [2, 3, 4], [3, 4, 5]
+[1, 2, 3, 4], [2, 3, 4, 5]
+[1, 2, 3, 4, 5]
+
+```
+
+$$\text{Total Subarrays for size } n = \frac{n \times (n + 1)}{2}$$
+
+For $n = 5$: $\frac{5 \times 6}{2} = 15 \text{ subarrays}$.
+
+---
+
+### 2. Approaches Comparison
+
+| Approach                  | Logic                                                                   | Time Complexity | Space Complexity |
+| ------------------------- | ----------------------------------------------------------------------- | --------------- | ---------------- |
+| 🔴 **Brute Force**        | Generate all $O(n^2)$ subarrays and compute sums via nested loops       | $O(n^3)$        | $O(1)$           |
+| 🟡 **Better Approach**    | Accumulate running sum inside the second loop                           | $O(n^2)$        | $O(1)$           |
+| 🟢 **Kadane's Algorithm** | Single-pass greedy/DP: maintain running sum and discard negative prefix | $O(n)$          | $O(1)$           |
+
+---
+
+### 3. Kadane's Algorithm Logic & Core Intuition
+
+Kadane's algorithm evaluates each element in a single pass:
+
+1. **Accumulate:** Add the current value to `currSum`.
+2. **Update Maximum:** Record the new global peak `maxSum = max(maxSum, currSum)`.
+3. **Reset Negative Sum:** If `currSum < 0`, drop the entire subarray and reset `currSum = 0`. Carrying forward a negative sum will only penalize any future subarray sum.
+
+$$\text{Core Rule: } \mathbf{\text{Keep Adding}} \rightarrow \mathbf{\text{Update Maximum}} \rightarrow \mathbf{\text{Reset if Negative}}$$
+
+---
+
+### 4. C++ Implementation
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <climits>
+#include <algorithm>
+using namespace std;
+
+int maxSubArray(const vector<int>& nums) {
+    int currSum = 0;
+    int maxSum = INT_MIN;
+
+    for (int val : nums) {
+        currSum += val;
+        maxSum = max(currSum, maxSum);
+
+        if (currSum < 0) {
+            currSum = 0; // Discard negative running prefix
+        }
+    }
+
+    return maxSum;
+}
+
+int main() {
+    vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    cout << "Maximum Subarray Sum: " << maxSubArray(nums) << endl; // Output: 6
+    return 0;
+}
+
+```
+
+---
+
+### 5. Step-by-Step Dry Run
+
+Input: `[-2, 1, -3, 4, -1, 2, 1]`
+
+| Element  | `currSum` Calculation                  | `maxSum` | Action / State            |
+| -------- | -------------------------------------- | -------- | ------------------------- |
+| **`-2`** | $0 + (-2) = -2 \rightarrow \mathbf{0}$ | **`-2`** | Negative sum reset to `0` |
+| **`1`**  | $0 + 1 = \mathbf{1}$                   | **`1`**  | New maximum found         |
+| **`-3`** | $1 + (-3) = -2 \rightarrow \mathbf{0}$ | **`1`**  | Negative sum reset to `0` |
+| **`4`**  | $0 + 4 = \mathbf{4}$                   | **`4`**  | New maximum found         |
+| **`-1`** | $4 + (-1) = \mathbf{3}$                | **`4`**  | Carried forward ($> 0$)   |
+| **`2`**  | $3 + 2 = \mathbf{5}$                   | **`5`**  | New maximum found         |
+| **`1`**  | $5 + 1 = \mathbf{6}$                   | **`6`**  | **Final Answer = 6**      |
+
+---
+
+### 6. Key Takeaways
+
+- ✅ Subarrays must contain **contiguous elements** (unlike subsequences).
+- ⚡ Runs in **$O(n)$ time** with **$O(1)$ auxiliary space**.
+- 💡 Initializing `maxSum = INT_MIN` ensures correct results even if all array elements are negative (e.g., `[-5, -2, -8] \rightarrow -2`).
+
+---
+
 ⭐ _If you find this repository helpful, consider leaving a star!_
-
-```
-
-```
