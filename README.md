@@ -41,7 +41,8 @@ Data Structures
 | **09** | **Vectors in C++ (Arrays Part 2 & Dynamic Memory)**     | ✅ Completed   |
 | **10** | **Kadane's Algorithm & Maximum Subarray Sum**           | ✅ Completed   |
 | **11** | **Majority Element & Pair Sum Problems**                | ✅ Completed   |
-| **12** | Best Time to Buy/Sell Stock & Container With Most Water | ⏳ In Progress |
+| **12** | **Asymptotic Analysis: Time & Space Complexity**        | ✅ Completed   |
+| **13** | Best Time to Buy/Sell Stock & Container With Most Water | ⏳ In Progress |
 
 ---
 
@@ -646,8 +647,113 @@ Input: `[2, 2, 1, 1, 1, 2, 2]`
 
 ---
 
+## 📘 Lecture 12: Asymptotic Analysis (Time & Space Complexity)
+
+Time and Space Complexity evaluate the operational scalability of algorithms as a function of the input size ($n$).
+
+---
+
+### ⏱️ 1. Asymptotic Notations
+
+- **Big $O$ ($O$):** Worst-case upper bound. Guarantees the code will never take more time/space than this limit.
+- **Big $\Theta$ ($\Theta$):** Average-case tight bound.
+- **Big $\Omega$ ($\Omega$):** Best-case lower bound.
+
+```text
+Growth Rate Hierarchy:
+O(1) < O(log n) < O(n) < O(n log n) < O(n^2) < O(n^3) < O(2^n) < O(n!)
+Fastest ──────────────────────────────────────────────────────────► Slowest
+
+```
+
+---
+
+### 💾 2. Space Complexity Breakdown
+
+$$\text{Total Space} = \text{Auxiliary Space (extra temporary memory)} + \text{Input Space}$$
+
+- In-place algorithms utilize $O(1)$ auxiliary space.
+- Recursion allocates stack frames proportional to the maximum tree depth.
+
+---
+
+### 📊 3. Complexity Classes & Code Snippets
+
+| Complexity        | Name         | Paradigm / Pattern                        | Example Code Logic                      |
+| ----------------- | ------------ | ----------------------------------------- | --------------------------------------- |
+| **$O(1)$**        | Constant     | Formula / Direct math                     | `int sum = n * (n + 1) / 2;`            |
+| **$O(\log n)$**   | Logarithmic  | Divide and conquer (Halving search space) | Binary Search (`mid = s + (e - s) / 2`) |
+| **$O(n)$**        | Linear       | Single pass / Linear scan                 | Kadane's Algorithm, Factorial loop      |
+| **$O(n \log n)$** | Linearithmic | Efficient sorting algorithms              | Merge Sort, Quick Sort (average)        |
+| **$O(n^2)$**      | Quadratic    | Nested pairwise iterations                | Selection Sort, Bubble Sort             |
+| **$O(2^n)$**      | Exponential  | Branching recursion                       | Brute-force recursive Fibonacci         |
+| **$O(n!)$**       | Factorial    | Generating all permutations               | $N$-Queens, Traveling Salesperson       |
+
+---
+
+### 🧩 4. Complexity Analysis Problems & Walkthroughs
+
+#### 🔹 1. Prime Number Check ($O(\sqrt{n})$ Time, $O(1)$ Space)
+
+```cpp
+for (int i = 2; i * i <= n; i++) {
+    if (n % i == 0) {
+        cout << "Non Prime";
+        break;
+    }
+}
+
+```
+
+- Loop terminates when $i^2 > n \implies i > \sqrt{n}$. Hence, time complexity is **$O(\sqrt{n})$**.
+
+#### 🔹 2. Selection Sort ($O(n^2)$ Time, $O(1)$ Space)
+
+```cpp
+for (int i = 0; i < n - 1; i++) {
+    int minIdx = i;
+    for (int j = i + 1; j < n; j++) {
+        if (arr[j] < arr[minIdx]) minIdx = j;
+    }
+    swap(arr[i], arr[minIdx]);
+}
+
+```
+
+- Total comparisons: $\frac{n(n - 1)}{2} \implies \mathbf{O(n^2)}$. Auxiliary space is $\mathbf{O(1)}$.
+
+#### 🔹 3. Recursive Fibonacci ($O(2^n)$ Time, $O(n)$ Space)
+
+```cpp
+int fib(int n) {
+    if (n == 0 || n == 1) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+
+```
+
+- **Time Complexity:** Generates a binary recursion tree of size $\approx 2^{n+1} - 1 \implies \mathbf{O(2^n)}$.
+- **Space Complexity:** Maximum call stack depth equals the longest branch ($n \rightarrow 0$) $\implies \mathbf{O(n)}$.
+
+#### 🔹 4. Merge Sort ($O(n \log n)$ Time, $O(n)$ Space)
+
+```cpp
+void mergeSort(int arr[], int si, int ei) {
+    if (si >= ei) return;
+    int mid = si + (ei - si) / 2;
+    mergeSort(arr, si, mid);
+    mergeSort(arr, mid + 1, ei);
+    merge(arr, si, mid, ei);
+}
+
+```
+
+- **Recurrence Relation:** $T(n) = 2T(n/2) + O(n)$.
+- **Time Complexity:** Tree height is $\log_2 n$ and merge work per level is $O(n)$, giving $\mathbf{O(n \log n)}$.
+- **Space Complexity:** Auxiliary temporary array plus call stack overhead $\implies \mathbf{O(n)}$.
+
+---
+
 ⭐ _If you find this repository helpful, consider leaving a star!_
 
-```
 
-```
