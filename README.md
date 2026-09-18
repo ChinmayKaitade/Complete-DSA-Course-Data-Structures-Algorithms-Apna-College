@@ -22,26 +22,26 @@ Data Structures
         ├── Tree
         ├── Graph
         └── Hash Table / Set
-
 ```
 
 ---
 
 ## 🗺️ Learning Roadmap
 
-| #      | Topic                                               | Status         |
-| ------ | --------------------------------------------------- | -------------- |
-| **01** | **Flowcharts, Pseudocode & Setup**                  | ✅ Completed   |
-| **02** | **Variables, Data Types & Operators**               | ✅ Completed   |
-| **03** | **Conditional Statements & Loops**                  | ✅ Completed   |
-| **04** | **Patterns (Logic Building)**                       | ✅ Completed   |
-| **05** | **Functions, Scope & Memory Stack**                 | ✅ Completed   |
-| **06** | **Binary Number System & Conversions**              | ✅ Completed   |
-| **07** | **Bitwise Operators & Data Type Modifiers**         | ✅ Completed   |
-| **08** | **Arrays (Part 1 - Search, Reverse & Reference)**   | ✅ Completed   |
-| **09** | **Vectors in C++ (Arrays Part 2 & Dynamic Memory)** | ✅ Completed   |
-| **10** | **Kadane's Algorithm & Maximum Subarray Sum**       | ✅ Completed   |
-| **11** | Majority Element & Pair Sum Problems                | ⏳ In Progress |
+| #      | Topic                                                   | Status         |
+| ------ | ------------------------------------------------------- | -------------- |
+| **01** | **Flowcharts, Pseudocode & Setup**                      | ✅ Completed   |
+| **02** | **Variables, Data Types & Operators**                   | ✅ Completed   |
+| **03** | **Conditional Statements & Loops**                      | ✅ Completed   |
+| **04** | **Patterns (Logic Building)**                           | ✅ Completed   |
+| **05** | **Functions, Scope & Memory Stack**                     | ✅ Completed   |
+| **06** | **Binary Number System & Conversions**                  | ✅ Completed   |
+| **07** | **Bitwise Operators & Data Type Modifiers**             | ✅ Completed   |
+| **08** | **Arrays (Part 1 - Search, Reverse & Reference)**       | ✅ Completed   |
+| **09** | **Vectors in C++ (Arrays Part 2 & Dynamic Memory)**     | ✅ Completed   |
+| **10** | **Kadane's Algorithm & Maximum Subarray Sum**           | ✅ Completed   |
+| **11** | **Majority Element & Pair Sum Problems**                | ✅ Completed   |
+| **12** | Best Time to Buy/Sell Stock & Container With Most Water | ⏳ In Progress |
 
 ---
 
@@ -450,4 +450,204 @@ Input: `[-2, 1, -3, 4, -1, 2, 1]`
 
 ---
 
+## 📘 Lecture 11: Majority Element & Pair Sum
+
+This module focuses on two classic array interview patterns: finding target pair sums in sorted arrays and identifying the majority element using brute force, sorting, and the optimal linear-time **Boyer-Moore Voting Algorithm**.
+
+---
+
+### 🎯 Part 1: Pair Sum (Two Sum in Sorted Array)
+
+Given a **sorted** integer array, find the indices of two elements that add up to a given `target`.
+
+#### 📊 Approaches Comparison
+
+| Approach           | Technique                          | Time Complexity | Space Complexity |
+| ------------------ | ---------------------------------- | --------------- | ---------------- |
+| 🔴 **Brute Force** | Check all pairs using nested loops | $O(n^2)$        | $O(1)$           |
+| 🟢 **Optimal**     | **2-Pointer Approach**             | $O(n)$          | $O(1)$           |
+
+#### 🔹 1. Brute Force Approach ($O(n^2)$)
+
+Check every possible pair `(i, j)` where $j > i$:
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> pairSumBrute(const vector<int>& nums, int target) {
+    int n = nums.size();
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (nums[i] + nums[j] == target) {
+                return {i, j};
+            }
+        }
+    }
+    return {};
+}
+
+```
+
+#### 🔹 2. Optimal 2-Pointer Approach ($O(n)$)
+
+Because the array is sorted:
+
+- Start two pointers: `i = 0` (left boundary) and `j = n - 1` (right boundary).
+- If `nums[i] + nums[j] > target`: decrement `j` to reduce the sum.
+- If `nums[i] + nums[j] < target`: increment `i` to enlarge the sum.
+- If `nums[i] + nums[j] == target`: match found!
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> pairSum(const vector<int>& nums, int target) {
+    int i = 0, j = nums.size() - 1;
+
+    while (i < j) {
+        int currentSum = nums[i] + nums[j];
+
+        if (currentSum > target) {
+            j--;
+        } else if (currentSum < target) {
+            i++;
+        } else {
+            return {i, j};
+        }
+    }
+
+    return {};
+}
+
+int main() {
+    vector<int> nums = {2, 7, 11, 15};
+    int target = 26;
+
+    vector<int> ans = pairSum(nums, target);
+    if (!ans.empty()) {
+        cout << "Indices: " << ans[0] << ", " << ans[1] << endl; // Output: 2, 3
+    }
+    return 0;
+}
+
+```
+
+---
+
+### 🗳️ Part 2: Majority Element (LeetCode 169)
+
+Given an array of size $n$, find the element that appears **more than $\lfloor n / 2 \rfloor$ times**. It is guaranteed that a majority element always exists.
+
+#### 📊 Approaches Comparison
+
+| Approach              | Technique                                      | Time Complexity | Space Complexity |
+| --------------------- | ---------------------------------------------- | --------------- | ---------------- |
+| 🔴 **Brute Force**    | Nested loop counting frequency of each element | $O(n^2)$        | $O(1)$           |
+| 🟡 **Better**         | Sort the array and count adjacent frequencies  | $O(n \log n)$   | $O(1)$           |
+| 🟢 **Best (Optimal)** | **Moore's Voting Algorithm**                   | $O(n)$          | $O(1)$           |
+
+#### 🔹 1. Better Approach: Sorting & Frequency Count ($O(n \log n)$)
+
+Sorting groups identical elements together. Traverse the sorted array and count adjacent matches:
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int majorityElementSorting(vector<int> nums) {
+    int n = nums.size();
+    sort(nums.begin(), nums.end());
+
+    int freq = 1;
+    int ans = nums[0];
+
+    for (int i = 1; i < n; i++) {
+        if (nums[i] == nums[i - 1]) {
+            freq++;
+        } else {
+            freq = 1;
+            ans = nums[i];
+        }
+
+        if (freq > n / 2) {
+            return ans;
+        }
+    }
+
+    return ans;
+}
+
+```
+
+> 💡 **Sorting Shortcut:** Any element appearing $> n / 2$ times will always occupy the center index `nums[n / 2]` in a sorted array. Thus, `sort()` followed by `return nums[n / 2];` solves it directly in $O(n \log n)$.
+
+#### 🔹 2. Best Approach: Moore's Voting Algorithm ($O(n)$ Time, $O(1)$ Space)
+
+#### 💡 Core Intuition
+
+Think of it as votes and cancellations:
+
+- If the incoming element matches the candidate (`ans`), increment `freq`.
+- If it differs, decrement `freq` (a mutual cancellation).
+- Since the majority element appears $> n / 2$ times, it will always survive the cancellation process.
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int majorityElement(const vector<int>& nums) {
+    int freq = 0;
+    int ans = 0;
+
+    for (int val : nums) {
+        if (freq == 0) {
+            ans = val;
+        }
+
+        if (ans == val) {
+            freq++;
+        } else {
+            freq--;
+        }
+    }
+
+    return ans;
+}
+
+int main() {
+    vector<int> nums = {2, 2, 1, 1, 1, 2, 2};
+    cout << "Majority Element: " << majorityElement(nums) << endl; // Output: 2
+    return 0;
+}
+
+```
+
+#### 🔍 Dry Run: Moore's Voting Algorithm
+
+Input: `[2, 2, 1, 1, 1, 2, 2]`
+
+| Step | Current Element | Candidate (`ans`) | `freq` Before | Action             | `freq` After |
+| ---- | --------------- | ----------------- | ------------- | ------------------ | ------------ |
+| 1    | **`2`**         | `2` (set)         | `0`           | Match `2 == 2`     | **`1`**      |
+| 2    | **`2`**         | `2`               | `1`           | Match `2 == 2`     | **`2`**      |
+| 3    | **`1`**         | `2`               | `2`           | Different `1 != 2` | **`1`**      |
+| 4    | **`1`**         | `2`               | `1`           | Different `1 != 2` | **`0`**      |
+| 5    | **`1`**         | `1` (reset)       | `0`           | Match `1 == 1`     | **`1`**      |
+| 6    | **`2`**         | `1`               | `1`           | Different `2 != 1` | **`0`**      |
+| 7    | **`2`**         | `2` (reset)       | `0`           | Match `2 == 2`     | **`1`**      |
+
+🎯 **Final Candidate = `2**`
+
+---
+
 ⭐ _If you find this repository helpful, consider leaving a star!_
+
+```
+
+```
