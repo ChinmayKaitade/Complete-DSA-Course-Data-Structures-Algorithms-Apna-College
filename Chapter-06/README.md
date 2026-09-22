@@ -48,7 +48,6 @@ int main() {
     cout << "Binary = " << decToBinary(num) << endl;
     return 0;
 }
-
 ```
 
 ---
@@ -94,7 +93,6 @@ int main() {
     cout << "Decimal = " << binToDecimal(binary) << endl;
     return 0;
 }
-
 ```
 
 ---
@@ -123,7 +121,6 @@ Computers use **2's Complement** to represent negative numbers because it simpli
 
 ```text
 Invert bits -> 1111 0111
-
 ```
 
 3. **Add 1 to get 2's Complement:**
@@ -133,7 +130,6 @@ Invert bits -> 1111 0111
 +         1
 ------------
   1111 1000  (-8 in 8-bit binary representation)
-
 ```
 
 > 💡 **Sign Bit Note:** The leftmost bit (MSB) is `1`, indicating that the stored number is **negative**.
@@ -148,7 +144,6 @@ When the MSB is `1`, the computer evaluates it as a negative value:
 
 ```text
 Invert bits -> 0000 0111
-
 ```
 
 2. **Add 1 to find the positive magnitude:**
@@ -158,16 +153,10 @@ Invert bits -> 0000 0111
 +         1
 ------------
   0000 1000  (which is 8 in decimal)
-
 ```
 
 3. **Attach negative sign:**
 
 ```text
 Result = -8
-
-```
-
-```
-
 ```

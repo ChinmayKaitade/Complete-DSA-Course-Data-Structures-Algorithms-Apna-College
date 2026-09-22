@@ -22,35 +22,37 @@ Data Structures
         ├── Tree
         ├── Graph
         └── Hash Table / Set
+
 ```
 
 ---
 
 ## 🗺️ Learning Roadmap
 
-| #      | Topic                                                   | Status         |
-| ------ | ------------------------------------------------------- | -------------- |
-| **01** | **Flowcharts, Pseudocode & Setup**                      | ✅ Completed   |
-| **02** | **Variables, Data Types & Operators**                   | ✅ Completed   |
-| **03** | **Conditional Statements & Loops**                      | ✅ Completed   |
-| **04** | **Patterns (Logic Building)**                           | ✅ Completed   |
-| **05** | **Functions, Scope & Memory Stack**                     | ✅ Completed   |
-| **06** | **Binary Number System & Conversions**                  | ✅ Completed   |
-| **07** | **Bitwise Operators & Data Type Modifiers**             | ✅ Completed   |
-| **08** | **Arrays (Part 1 - Search, Reverse & Reference)**       | ✅ Completed   |
-| **09** | **Vectors in C++ (Arrays Part 2 & Dynamic Memory)**     | ✅ Completed   |
-| **10** | **Kadane's Algorithm & Maximum Subarray Sum**           | ✅ Completed   |
-| **11** | **Majority Element & Pair Sum Problems**                | ✅ Completed   |
-| **12** | **Asymptotic Analysis: Time & Space Complexity**        | ✅ Completed   |
-| **13** | Best Time to Buy/Sell Stock & Container With Most Water | ⏳ In Progress |
+| # | Topic | Status |
+| --- | --- | --- |
+| **01** | **Flowcharts, Pseudocode & Setup** | ✅ Completed |
+| **02** | **Variables, Data Types & Operators** | ✅ Completed |
+| **03** | **Conditional Statements & Loops** | ✅ Completed |
+| **04** | **Patterns (Logic Building)** | ✅ Completed |
+| **05** | **Functions, Scope & Memory Stack** | ✅ Completed |
+| **06** | **Binary Number System & Conversions** | ✅ Completed |
+| **07** | **Bitwise Operators & Data Type Modifiers** | ✅ Completed |
+| **08** | **Arrays (Part 1 - Search, Reverse & Reference)** | ✅ Completed |
+| **09** | **Vectors in C++ (Arrays Part 2 & Dynamic Memory)** | ✅ Completed |
+| **10** | **Kadane's Algorithm & Maximum Subarray Sum** | ✅ Completed |
+| **11** | **Majority Element & Pair Sum Problems** | ✅ Completed |
+| **12** | **Asymptotic Analysis: Time & Space Complexity** | ✅ Completed |
+| **13** | **Binary Exponentiation & Stock Buy and Sell** | ✅ Completed |
+| **14** | Container With Most Water (2-Pointer Approach) | ⏳ In Progress |
 
 ---
 
 ## 🛠️ Tech Stack & Tools
 
-- **Language:** C++ (C++17/C++20)
-- **Compiler:** GCC / MinGW (`g++`)
-- **Editor:** Visual Studio Code
+* **Language:** C++ (C++17/C++20)
+* **Compiler:** GCC / MinGW (`g++`)
+* **Editor:** Visual Studio Code
 
 ---
 
@@ -58,9 +60,9 @@ Data Structures
 
 ### 🎯 Key Highlights
 
-- **Logic Building:** Breaking down problem statements using intuitive **Flowcharts** and structured **Pseudocode**.
-- **Environment Setup:** Installing and configuring **VS Code**, `g++` compiler, and essential extensions for modern C++ development.
-- **Flowchart Components:** Start/End (Oval), Input/Output (Parallelogram), Process (Rectangle), Decision (Diamond).
+* **Logic Building:** Breaking down problem statements using intuitive **Flowcharts** and structured **Pseudocode**.
+* **Environment Setup:** Installing and configuring **VS Code**, `g++` compiler, and essential extensions for modern C++ development.
+* **Flowchart Components:** Start/End (Oval), Input/Output (Parallelogram), Process (Rectangle), Decision (Diamond).
 
 ---
 
@@ -81,25 +83,25 @@ int main() {
 
 ### 2. Primitive Data Types & Memory Sizes
 
-| Data Type     | Keyword  | Size        | Description                         |
-| ------------- | -------- | ----------- | ----------------------------------- |
-| **Integer**   | `int`    | **4 bytes** | Stores whole numbers (`-25`, `100`) |
-| **Character** | `char`   | **1 byte**  | Single character (`'a'`, `'Z'`)     |
-| **Float**     | `float`  | **4 bytes** | Single-precision decimal numbers    |
-| **Double**    | `double` | **8 bytes** | Double-precision decimal numbers    |
-| **Boolean**   | `bool`   | **1 byte**  | Truth values (`true`/`false`)       |
+| Data Type | Keyword | Size | Description |
+| --- | --- | --- | --- |
+| **Integer** | `int` | **4 bytes** | Stores whole numbers (`-25`, `100`) |
+| **Character** | `char` | **1 byte** | Single character (`'a'`, `'Z'`) |
+| **Float** | `float` | **4 bytes** | Single-precision decimal numbers |
+| **Double** | `double` | **8 bytes** | Double-precision decimal numbers |
+| **Boolean** | `bool` | **1 byte** | Truth values (`true`/`false`) |
 
 ### 3. Type Casting
 
-- **Implicit (Type Promotion):** Done automatically by the compiler (`small type` $\rightarrow$ `large type`).
-- **Explicit:** Manually enforced using `(type)val` or `static_cast<type>(val)`.
+* **Implicit (Type Promotion):** Done automatically by the compiler (`small type` $\rightarrow$ `large type`).
+* **Explicit:** Manually enforced using `(type)val` or `static_cast<type>(val)`.
 
 ### 4. Operators Breakdown
 
-- **Arithmetic:** `+`, `-`, `*`, `/`, `%`
-- **Relational:** `==`, `!=`, `>`, `<`, `>=`, `<=`
-- **Logical:** `&&` (AND), `||` (OR), `!` (NOT)
-- **Unary:** Pre-increment (`++a`), Post-increment (`a++`), Pre-decrement (`--a`), Post-decrement (`a--`)
+* **Arithmetic:** `+`, `-`, `*`, `/`, `%`
+* **Relational:** `==`, `!=`, `>`, `<`, `>=`, `<=`
+* **Logical:** `&&` (AND), `||` (OR), `!` (NOT)
+* **Unary:** Pre-increment (`++a`), Post-increment (`a++`), Pre-decrement (`--a`), Post-decrement (`a--`)
 
 ---
 
@@ -107,15 +109,15 @@ int main() {
 
 ### 1. Conditional Logic
 
-- `if-else` and `else-if` ladders for multi-branch decisions.
-- **Ternary Operator:** `condition ? exp1 : exp2;`
-- **ASCII Checking:** `'A'-'Z'` ($65\text{--}90$) and `'a'-'z'` ($97\text{--}122$).
+* `if-else` and `else-if` ladders for multi-branch decisions.
+* **Ternary Operator:** `condition ? exp1 : exp2;`
+* **ASCII Checking:** `'A'-'Z'` ($65\text{--}90$) and `'a'-'z'` ($97\text{--}122$).
 
 ### 2. Iteration (Loops)
 
-- **`while` Loop:** Entry-controlled loop.
-- **`for` Loop:** Standard counter loop (`initialization; condition; updation`).
-- **`do-while` Loop:** Exit-controlled loop (guaranteed to run at least once).
+* **`while` Loop:** Entry-controlled loop.
+* **`for` Loop:** Standard counter loop (`initialization; condition; updation`).
+* **`do-while` Loop:** Exit-controlled loop (guaranteed to run at least once).
 
 ### 3. Prime Number Check ($O(\sqrt{N})$)
 
@@ -141,15 +143,15 @@ Essential patterns for mastering 2D grid navigation and nested loop controls.
 
 ### 1. Square & Triangle Patterns
 
-- **Square Matrix:** Outer loop rows ($i$), inner loop columns ($j$).
-- **Star/Number Triangle:** Inner loop runs up to current row ($j \le i$).
-- **Reverse Number Triangle:** Inner loop counts downward from $i$ to $1$.
+* **Square Matrix:** Outer loop rows ($i$), inner loop columns ($j$).
+* **Star/Number Triangle:** Inner loop runs up to current row ($j \le i$).
+* **Reverse Number Triangle:** Inner loop counts downward from $i$ to $1$.
 
 ### 2. Floyd's Triangle & Symmetric Inversions
 
-- **Floyd's Triangle:** Continuous counter incrementing through row-column iterations.
-- **Inverted Triangles:** Space management loop followed by character/number loop.
-- **Advanced Symmetric Shapes:** Palindromic Pyramids, Hollow Diamonds, and Butterfly patterns.
+* **Floyd's Triangle:** Continuous counter incrementing through row-column iterations.
+* **Inverted Triangles:** Space management loop followed by character/number loop.
+* **Advanced Symmetric Shapes:** Palindromic Pyramids, Hollow Diamonds, and Butterfly patterns.
 
 ---
 
@@ -163,14 +165,14 @@ Essential patterns for mastering 2D grid navigation and nested loop controls.
 
 ### 2. Call Stack & Pass by Value
 
-- Functions execute inside dedicated stack frames.
-- **Pass by Value:** A duplicate copy of the argument is passed. Modifications inside the function do not mutate variables in `main()`.
+* Functions execute inside dedicated stack frames.
+* **Pass by Value:** A duplicate copy of the argument is passed. Modifications inside the function do not mutate variables in `main()`.
 
 ### 3. Core Algorithms
 
-- **Sum of Digits:** Extract last digit via `% 10`, reduce via `/ 10`.
-- **Binomial Coefficient ($nCr$):** $\frac{n!}{r! \times (n - r)!}$ using reusable `factorial()` functions.
-- **Fibonacci Term Generator:** Linear state iteration using `prev1` and `prev2`.
+* **Sum of Digits:** Extract last digit via `% 10`, reduce via `/ 10`.
+* **Binomial Coefficient ($nCr$):** $\frac{n!}{r! \times (n - r)!}$ using reusable `factorial()` functions.
+* **Fibonacci Term Generator:** Linear state iteration using `prev1` and `prev2`.
 
 ---
 
@@ -178,8 +180,8 @@ Essential patterns for mastering 2D grid navigation and nested loop controls.
 
 ### 1. Number Conversions
 
-- **Decimal to Binary:** Repeated division by $2$, recording remainders bottom-to-top.
-- **Binary to Decimal:** Multiplying bits by successive powers of $2$ ($2^0, 2^1, 2^2, \dots$).
+* **Decimal to Binary:** Repeated division by $2$, recording remainders bottom-to-top.
+* **Binary to Decimal:** Multiplying bits by successive powers of $2$ ($2^0, 2^1, 2^2, \dots$).
 
 ### 2. 2's Complement Representation (Negative Numbers)
 
@@ -203,13 +205,13 @@ Example: -8 (8-bit representation)
 
 ### 1. Bitwise Operations & Shifts
 
-- `&` (AND), `|` (OR), `^` (XOR), `~` (NOT)
-- **Left Shift (`a << b`):** $a \times 2^b$
-- **Right Shift (`a >> b`):** $\lfloor a / 2^b \rfloor$
+* `&` (AND), `|` (OR), `^` (XOR), `~` (NOT)
+* **Left Shift (`a << b`):** $a \times 2^b$
+* **Right Shift (`a >> b`):** $\lfloor a / 2^b \rfloor$
 
 ### 2. Key Bitwise Tricks
 
-- **Power of 2 Check ($O(1)$ without loops):**
+* **Power of 2 Check ($O(1)$ without loops):**
 
 ```cpp
 bool isPowerOfTwo = (n > 0) && ((n & (n - 1)) == 0);
@@ -222,8 +224,8 @@ bool isPowerOfTwo = (n > 0) && ((n & (n - 1)) == 0);
 
 ### 4. Data Type Modifiers & Scope
 
-- **Modifiers:** `short`, `long`, `long long`, `signed`, `unsigned`
-- **Scope:** Local (block-level lifetime) vs. Global (program lifetime).
+* **Modifiers:** `short`, `long`, `long long`, `signed`, `unsigned`
+* **Scope:** Local (block-level lifetime) vs. Global (program lifetime).
 
 ---
 
@@ -231,8 +233,8 @@ bool isPowerOfTwo = (n > 0) && ((n & (n - 1)) == 0);
 
 ### 1. Core Properties & Syntax
 
-- **Linear & Homogeneous:** Holds elements of the exact same data type in contiguous memory.
-- **0-Indexed:** First element sits at index `0`, last element at index `size - 1`.
+* **Linear & Homogeneous:** Holds elements of the exact same data type in contiguous memory.
+* **0-Indexed:** First element sits at index `0`, last element at index `size - 1`.
 
 ```cpp
 int arr[5] = {10, 20, 30, 40, 50};
@@ -302,34 +304,34 @@ vector<int> vec3(3, 0);       // Size 3, initialized with 0 -> {0, 0, 0}
 
 ### 2. Common Vector Functions
 
-| Method               | Description                                                 | Time Complexity  |
-| -------------------- | ----------------------------------------------------------- | ---------------- |
-| `vec.size()`         | Returns current number of elements                          | $O(1)$           |
-| `vec.capacity()`     | Returns total allocated memory capacity                     | $O(1)$           |
+| Method | Description | Time Complexity |
+| --- | --- | --- |
+| `vec.size()` | Returns current number of elements | $O(1)$ |
+| `vec.capacity()` | Returns total allocated memory capacity | $O(1)$ |
 | `vec.push_back(val)` | Inserts an element at the back (doubles capacity when full) | $O(1)$ amortized |
-| `vec.pop_back()`     | Deletes the last element                                    | $O(1)$           |
-| `vec.front()`        | Returns reference to the first element                      | $O(1)$           |
-| `vec.back()`         | Returns reference to the last element                       | $O(1)$           |
-| `vec.at(idx)`        | Bounds-checked element access                               | $O(1)$           |
+| `vec.pop_back()` | Deletes the last element | $O(1)$ |
+| `vec.front()` | Returns reference to the first element | $O(1)$ |
+| `vec.back()` | Returns reference to the last element | $O(1)$ |
+| `vec.at(idx)` | Bounds-checked element access | $O(1)$ |
 
 ### 3. Static vs. Dynamic Memory Allocation
 
-- **Static Allocation (Arrays):** Memory allocated on the **Stack** at compile-time with a fixed, immutable size.
-- **Dynamic Allocation (Vectors):** Memory allocated on the **Heap** at run-time, automatically expanding as elements are pushed.
+* **Static Allocation (Arrays):** Memory allocated on the **Stack** at compile-time with a fixed, immutable size.
+* **Dynamic Allocation (Vectors):** Memory allocated on the **Heap** at run-time, automatically expanding as elements are pushed.
 
 ### 4. Size vs. Capacity Growth
 
 When `vec.size() == vec.capacity()`, calling `push_back()` triggers an internal reallocation:
 
-- It allocates a new memory block with **$2\times$ capacity**.
-- Copies existing elements over and deallocates the previous block.
+* It allocates a new memory block with **$2\times$ capacity**.
+* Copies existing elements over and deallocates the previous block.
 
 ### 5. Algorithmic Problem: Single Number (LeetCode 136)
 
 Given an array where every element appears twice except one, find the single element using XOR properties:
 
-- $n \oplus n = 0$
-- $n \oplus 0 = n$
+* $n \oplus n = 0$
+* $n \oplus 0 = n$
 
 ```cpp
 int singleNumber(const vector<int>& nums) {
@@ -372,11 +374,11 @@ For $n = 5$: $\frac{5 \times 6}{2} = 15 \text{ subarrays}$.
 
 ### 2. Approaches Comparison
 
-| Approach                  | Logic                                                                   | Time Complexity | Space Complexity |
-| ------------------------- | ----------------------------------------------------------------------- | --------------- | ---------------- |
-| 🔴 **Brute Force**        | Generate all $O(n^2)$ subarrays and compute sums via nested loops       | $O(n^3)$        | $O(1)$           |
-| 🟡 **Better Approach**    | Accumulate running sum inside the second loop                           | $O(n^2)$        | $O(1)$           |
-| 🟢 **Kadane's Algorithm** | Single-pass greedy/DP: maintain running sum and discard negative prefix | $O(n)$          | $O(1)$           |
+| Approach | Logic | Time Complexity | Space Complexity |
+| --- | --- | --- | --- |
+| 🔴 **Brute Force** | Generate all $O(n^2)$ subarrays and compute sums via nested loops | $O(n^3)$ | $O(1)$ |
+| 🟡 **Better Approach** | Accumulate running sum inside the second loop | $O(n^2)$ | $O(1)$ |
+| 🟢 **Kadane's Algorithm** | Single-pass greedy/DP: maintain running sum and discard negative prefix | $O(n)$ | $O(1)$ |
 
 ---
 
@@ -431,23 +433,23 @@ int main() {
 
 Input: `[-2, 1, -3, 4, -1, 2, 1]`
 
-| Element  | `currSum` Calculation                  | `maxSum` | Action / State            |
-| -------- | -------------------------------------- | -------- | ------------------------- |
+| Element | `currSum` Calculation | `maxSum` | Action / State |
+| --- | --- | --- | --- |
 | **`-2`** | $0 + (-2) = -2 \rightarrow \mathbf{0}$ | **`-2`** | Negative sum reset to `0` |
-| **`1`**  | $0 + 1 = \mathbf{1}$                   | **`1`**  | New maximum found         |
-| **`-3`** | $1 + (-3) = -2 \rightarrow \mathbf{0}$ | **`1`**  | Negative sum reset to `0` |
-| **`4`**  | $0 + 4 = \mathbf{4}$                   | **`4`**  | New maximum found         |
-| **`-1`** | $4 + (-1) = \mathbf{3}$                | **`4`**  | Carried forward ($> 0$)   |
-| **`2`**  | $3 + 2 = \mathbf{5}$                   | **`5`**  | New maximum found         |
-| **`1`**  | $5 + 1 = \mathbf{6}$                   | **`6`**  | **Final Answer = 6**      |
+| **`1`** | $0 + 1 = \mathbf{1}$ | **`1`** | New maximum found |
+| **`-3`** | $1 + (-3) = -2 \rightarrow \mathbf{0}$ | **`1`** | Negative sum reset to `0` |
+| **`4`** | $0 + 4 = \mathbf{4}$ | **`4`** | New maximum found |
+| **`-1`** | $4 + (-1) = \mathbf{3}$ | **`4`** | Carried forward ($> 0$) |
+| **`2`** | $3 + 2 = \mathbf{5}$ | **`5`** | New maximum found |
+| **`1`** | $5 + 1 = \mathbf{6}$ | **`6`** | **Final Answer = 6** |
 
 ---
 
 ### 6. Key Takeaways
 
-- ✅ Subarrays must contain **contiguous elements** (unlike subsequences).
-- ⚡ Runs in **$O(n)$ time** with **$O(1)$ auxiliary space**.
-- 💡 Initializing `maxSum = INT_MIN` ensures correct results even if all array elements are negative (e.g., `[-5, -2, -8] \rightarrow -2`).
+* ✅ Subarrays must contain **contiguous elements** (unlike subsequences).
+* ⚡ Runs in **$O(n)$ time** with **$O(1)$ auxiliary space**.
+* 💡 Initializing `maxSum = INT_MIN` ensures correct results even if all array elements are negative (e.g., `[-5, -2, -8] \rightarrow -2`).
 
 ---
 
@@ -463,10 +465,10 @@ Given a **sorted** integer array, find the indices of two elements that add up t
 
 #### 📊 Approaches Comparison
 
-| Approach           | Technique                          | Time Complexity | Space Complexity |
-| ------------------ | ---------------------------------- | --------------- | ---------------- |
-| 🔴 **Brute Force** | Check all pairs using nested loops | $O(n^2)$        | $O(1)$           |
-| 🟢 **Optimal**     | **2-Pointer Approach**             | $O(n)$          | $O(1)$           |
+| Approach | Technique | Time Complexity | Space Complexity |
+| --- | --- | --- | --- |
+| 🔴 **Brute Force** | Check all pairs using nested loops | $O(n^2)$ | $O(1)$ |
+| 🟢 **Optimal** | **2-Pointer Approach** | $O(n)$ | $O(1)$ |
 
 #### 🔹 1. Brute Force Approach ($O(n^2)$)
 
@@ -495,10 +497,10 @@ vector<int> pairSumBrute(const vector<int>& nums, int target) {
 
 Because the array is sorted:
 
-- Start two pointers: `i = 0` (left boundary) and `j = n - 1` (right boundary).
-- If `nums[i] + nums[j] > target`: decrement `j` to reduce the sum.
-- If `nums[i] + nums[j] < target`: increment `i` to enlarge the sum.
-- If `nums[i] + nums[j] == target`: match found!
+* Start two pointers: `i = 0` (left boundary) and `j = n - 1` (right boundary).
+* If `nums[i] + nums[j] > target`: decrement `j` to reduce the sum.
+* If `nums[i] + nums[j] < target`: increment `i` to enlarge the sum.
+* If `nums[i] + nums[j] == target`: match found!
 
 ```cpp
 #include <iostream>
@@ -544,11 +546,11 @@ Given an array of size $n$, find the element that appears **more than $\lfloor n
 
 #### 📊 Approaches Comparison
 
-| Approach              | Technique                                      | Time Complexity | Space Complexity |
-| --------------------- | ---------------------------------------------- | --------------- | ---------------- |
-| 🔴 **Brute Force**    | Nested loop counting frequency of each element | $O(n^2)$        | $O(1)$           |
-| 🟡 **Better**         | Sort the array and count adjacent frequencies  | $O(n \log n)$   | $O(1)$           |
-| 🟢 **Best (Optimal)** | **Moore's Voting Algorithm**                   | $O(n)$          | $O(1)$           |
+| Approach | Technique | Time Complexity | Space Complexity |
+| --- | --- | --- | --- |
+| 🔴 **Brute Force** | Nested loop counting frequency of each element | $O(n^2)$ | $O(1)$ |
+| 🟡 **Better** | Sort the array and count adjacent frequencies | $O(n \log n)$ | $O(1)$ |
+| 🟢 **Best (Optimal)** | **Moore's Voting Algorithm** | $O(n)$ | $O(1)$ |
 
 #### 🔹 1. Better Approach: Sorting & Frequency Count ($O(n \log n)$)
 
@@ -593,9 +595,9 @@ int majorityElementSorting(vector<int> nums) {
 
 Think of it as votes and cancellations:
 
-- If the incoming element matches the candidate (`ans`), increment `freq`.
-- If it differs, decrement `freq` (a mutual cancellation).
-- Since the majority element appears $> n / 2$ times, it will always survive the cancellation process.
+* If the incoming element matches the candidate (`ans`), increment `freq`.
+* If it differs, decrement `freq` (a mutual cancellation).
+* Since the majority element appears $> n / 2$ times, it will always survive the cancellation process.
 
 ```cpp
 #include <iostream>
@@ -633,15 +635,15 @@ int main() {
 
 Input: `[2, 2, 1, 1, 1, 2, 2]`
 
-| Step | Current Element | Candidate (`ans`) | `freq` Before | Action             | `freq` After |
-| ---- | --------------- | ----------------- | ------------- | ------------------ | ------------ |
-| 1    | **`2`**         | `2` (set)         | `0`           | Match `2 == 2`     | **`1`**      |
-| 2    | **`2`**         | `2`               | `1`           | Match `2 == 2`     | **`2`**      |
-| 3    | **`1`**         | `2`               | `2`           | Different `1 != 2` | **`1`**      |
-| 4    | **`1`**         | `2`               | `1`           | Different `1 != 2` | **`0`**      |
-| 5    | **`1`**         | `1` (reset)       | `0`           | Match `1 == 1`     | **`1`**      |
-| 6    | **`2`**         | `1`               | `1`           | Different `2 != 1` | **`0`**      |
-| 7    | **`2`**         | `2` (reset)       | `0`           | Match `2 == 2`     | **`1`**      |
+| Step | Current Element | Candidate (`ans`) | `freq` Before | Action | `freq` After |
+| --- | --- | --- | --- | --- | --- |
+| 1 | **`2`** | `2` (set) | `0` | Match `2 == 2` | **`1`** |
+| 2 | **`2`** | `2` | `1` | Match `2 == 2` | **`2`** |
+| 3 | **`1`** | `2` | `2` | Different `1 != 2` | **`1`** |
+| 4 | **`1`** | `2` | `1` | Different `1 != 2` | **`0`** |
+| 5 | **`1`** | `1` (reset) | `0` | Match `1 == 1` | **`1`** |
+| 6 | **`2`** | `1` | `1` | Different `2 != 1` | **`0`** |
+| 7 | **`2`** | `2` (reset) | `0` | Match `2 == 2` | **`1`** |
 
 🎯 **Final Candidate = `2**`
 
@@ -655,9 +657,9 @@ Time and Space Complexity evaluate the operational scalability of algorithms as 
 
 ### ⏱️ 1. Asymptotic Notations
 
-- **Big $O$ ($O$):** Worst-case upper bound. Guarantees the code will never take more time/space than this limit.
-- **Big $\Theta$ ($\Theta$):** Average-case tight bound.
-- **Big $\Omega$ ($\Omega$):** Best-case lower bound.
+* **Big $O$ ($O$):** Worst-case upper bound. Guarantees the code will never take more time/space than this limit.
+* **Big $\Theta$ ($\Theta$):** Average-case tight bound.
+* **Big $\Omega$ ($\Omega$):** Best-case lower bound.
 
 ```text
 Growth Rate Hierarchy:
@@ -672,22 +674,22 @@ Fastest ────────────────────────
 
 $$\text{Total Space} = \text{Auxiliary Space (extra temporary memory)} + \text{Input Space}$$
 
-- In-place algorithms utilize $O(1)$ auxiliary space.
-- Recursion allocates stack frames proportional to the maximum tree depth.
+* In-place algorithms utilize $O(1)$ auxiliary space.
+* Recursion allocates stack frames proportional to the maximum tree depth.
 
 ---
 
 ### 📊 3. Complexity Classes & Code Snippets
 
-| Complexity        | Name         | Paradigm / Pattern                        | Example Code Logic                      |
-| ----------------- | ------------ | ----------------------------------------- | --------------------------------------- |
-| **$O(1)$**        | Constant     | Formula / Direct math                     | `int sum = n * (n + 1) / 2;`            |
-| **$O(\log n)$**   | Logarithmic  | Divide and conquer (Halving search space) | Binary Search (`mid = s + (e - s) / 2`) |
-| **$O(n)$**        | Linear       | Single pass / Linear scan                 | Kadane's Algorithm, Factorial loop      |
-| **$O(n \log n)$** | Linearithmic | Efficient sorting algorithms              | Merge Sort, Quick Sort (average)        |
-| **$O(n^2)$**      | Quadratic    | Nested pairwise iterations                | Selection Sort, Bubble Sort             |
-| **$O(2^n)$**      | Exponential  | Branching recursion                       | Brute-force recursive Fibonacci         |
-| **$O(n!)$**       | Factorial    | Generating all permutations               | $N$-Queens, Traveling Salesperson       |
+| Complexity | Name | Paradigm / Pattern | Example Code Logic |
+| --- | --- | --- | --- |
+| **$O(1)$** | Constant | Formula / Direct math | `int sum = n * (n + 1) / 2;` |
+| **$O(\log n)$** | Logarithmic | Divide and conquer (Halving search space) | Binary Search (`mid = s + (e - s) / 2`) |
+| **$O(n)$** | Linear | Single pass / Linear scan | Kadane's Algorithm, Factorial loop |
+| **$O(n \log n)$** | Linearithmic | Efficient sorting algorithms | Merge Sort, Quick Sort (average) |
+| **$O(n^2)$** | Quadratic | Nested pairwise iterations | Selection Sort, Bubble Sort |
+| **$O(2^n)$** | Exponential | Branching recursion | Brute-force recursive Fibonacci |
+| **$O(n!)$** | Factorial | Generating all permutations | $N$-Queens, Traveling Salesperson |
 
 ---
 
@@ -705,7 +707,7 @@ for (int i = 2; i * i <= n; i++) {
 
 ```
 
-- Loop terminates when $i^2 > n \implies i > \sqrt{n}$. Hence, time complexity is **$O(\sqrt{n})$**.
+* Loop terminates when $i^2 > n \implies i > \sqrt{n}$. Hence, time complexity is **$O(\sqrt{n})$**.
 
 #### 🔹 2. Selection Sort ($O(n^2)$ Time, $O(1)$ Space)
 
@@ -720,7 +722,7 @@ for (int i = 0; i < n - 1; i++) {
 
 ```
 
-- Total comparisons: $\frac{n(n - 1)}{2} \implies \mathbf{O(n^2)}$. Auxiliary space is $\mathbf{O(1)}$.
+* Total comparisons: $\frac{n(n - 1)}{2} \implies \mathbf{O(n^2)}$. Auxiliary space is $\mathbf{O(1)}$.
 
 #### 🔹 3. Recursive Fibonacci ($O(2^n)$ Time, $O(n)$ Space)
 
@@ -732,8 +734,8 @@ int fib(int n) {
 
 ```
 
-- **Time Complexity:** Generates a binary recursion tree of size $\approx 2^{n+1} - 1 \implies \mathbf{O(2^n)}$.
-- **Space Complexity:** Maximum call stack depth equals the longest branch ($n \rightarrow 0$) $\implies \mathbf{O(n)}$.
+* **Time Complexity:** Generates a binary recursion tree of size $\approx 2^{n+1} - 1 \implies \mathbf{O(2^n)}$.
+* **Space Complexity:** Maximum call stack depth equals the longest branch ($n \rightarrow 0$) $\implies \mathbf{O(n)}$.
 
 #### 🔹 4. Merge Sort ($O(n \log n)$ Time, $O(n)$ Space)
 
@@ -748,12 +750,164 @@ void mergeSort(int arr[], int si, int ei) {
 
 ```
 
-- **Recurrence Relation:** $T(n) = 2T(n/2) + O(n)$.
-- **Time Complexity:** Tree height is $\log_2 n$ and merge work per level is $O(n)$, giving $\mathbf{O(n \log n)}$.
-- **Space Complexity:** Auxiliary temporary array plus call stack overhead $\implies \mathbf{O(n)}$.
+* **Recurrence Relation:** $T(n) = 2T(n/2) + O(n)$.
+* **Time Complexity:** Tree height is $\log_2 n$ and merge work per level is $O(n)$, giving $\mathbf{O(n \log n)}$.
+* **Space Complexity:** Auxiliary temporary array plus call stack overhead $\implies \mathbf{O(n)}$.
 
 ---
 
-⭐ _If you find this repository helpful, consider leaving a star!_
+## 📘 Lecture 13: Binary Exponentiation & Stock Buy and Sell
 
+This module covers two high-frequency interview problems: calculating power in logarithmic time via **Binary Exponentiation** ($x^n$) and maximizing trading profits in a single transaction via **Greedy Min-Tracking**.
+
+---
+
+### ⚡ Part 1: Compute $x^n$ (LeetCode 50: Pow(x, n))
+
+A naive linear multiplication takes $O(n)$ time, leading to Time Limit Exceeded (TLE) when $n \approx 2^{31} - 1$. **Binary Exponentiation** reduces this to logarithmic time by halving the exponent at each step.
+
+#### 💡 Core Intuition & Mathematical Model
+
+Any integer $n$ can be expressed in binary form. We can factor powers based on bit parity:
+
+* If power is **even**: $x^n = (x^2)^{n/2}$
+* If power is **odd**: $x^n = x \times (x^2)^{(n-1)/2}$
+
+```text
+Example: 2^10
+10 in Binary = 1010_2
+
+Step 1: binForm = 10 (even) -> x becomes 2^2 = 4,    binForm = 5
+Step 2: binForm = 5  (odd)  -> ans *= 4, x becomes 4^2 = 16, binForm = 2
+Step 3: binForm = 2  (even) -> x becomes 16^2 = 256, binForm = 1
+Step 4: binForm = 1  (odd)  -> ans *= 256 (ans = 4 * 256 = 1024), binForm = 0
+
+```
+
+#### ⚠️ Critical Edge Cases
+
+1. **$n < 0$:** Invert base ($x = 1/x$) and make $n$ positive ($n = -n$).
+2. **$n = -2^{31}$ (`INT_MIN`):** Inverting `INT_MIN` directly in a 32-bit signed integer causes overflow because `INT_MAX` is $2^{31} - 1$. Cast `n` to `long long` before sign inversion.
+
+#### 💻 C++ Implementation: Pow(x, n)
+
+* **Time Complexity:** $O(\log_2 n)$
+* **Space Complexity:** $O(1)$
+
+```cpp
+#include <iostream>
+using namespace std;
+
+double myPow(double x, int n) {
+    if (n == 0 || x == 1.0) return 1.0;
+    if (x == 0.0) return 0.0;
+    if (x == -1.0) return (n % 2 == 0) ? 1.0 : -1.0;
+
+    long long binForm = n;
+
+    if (binForm < 0) {
+        x = 1.0 / x;
+        binForm = -binForm;
+    }
+
+    double ans = 1.0;
+
+    while (binForm > 0) {
+        if (binForm % 2 == 1) {
+            ans *= x;
+        }
+        x *= x;
+        binForm /= 2;
+    }
+
+    return ans;
+}
+
+int main() {
+    double x = 2.0;
+    int n = 10;
+    cout << x << "^" << n << " = " << myPow(x, n) << endl; // Output: 1024
+    return 0;
+}
+
+```
+
+---
+
+### 📈 Part 2: Best Time to Buy & Sell Stock (LeetCode 121)
+
+Given an array `prices` where `prices[i]` is the stock price on day `i`, find the maximum profit possible from **a single transaction** (buy once, sell once in the future). If no profit is possible, return `0`.
+
+#### 📊 Approaches Comparison
+
+| Approach | Technique | Time Complexity | Space Complexity |
+| --- | --- | --- | --- |
+| 🔴 **Brute Force** | Compare every pair $(i, j)$ where $j > i$ | $O(n^2)$ | $O(1)$ |
+| 🟢 **Greedy / One-Pass** | Track minimum purchase price seen so far | $O(n)$ | $O(1)$ |
+
+#### 💡 Optimal Approach: Running Minimum Tracker
+
+To maximize `prices[sell] - prices[buy]`, the buy price must be as low as possible *before* the sell day.
+
+1. Maintain `bestBuy` initialized to `prices[0]`.
+2. As we iterate through each day:
+* Calculate potential profit: `prices[i] - bestBuy`.
+* Update `maxProfit = max(maxProfit, potentialProfit)`.
+* Update `bestBuy = min(bestBuy, prices[i])`.
+
+
+
+#### 💻 C++ Implementation: Best Time to Buy and Sell Stock
+
+* **Time Complexity:** $O(n)$
+* **Space Complexity:** $O(1)$
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int maxProfit(const vector<int>& prices) {
+    if (prices.empty()) return 0;
+
+    int maxProfitVal = 0;
+    int bestBuy = prices[0];
+
+    for (size_t i = 1; i < prices.size(); i++) {
+        if (prices[i] > bestBuy) {
+            maxProfitVal = max(maxProfitVal, prices[i] - bestBuy);
+        }
+        bestBuy = min(bestBuy, prices[i]);
+    }
+
+    return maxProfitVal;
+}
+
+int main() {
+    vector<int> prices = {7, 1, 5, 3, 6, 4};
+    cout << "Maximum Profit: " << maxProfit(prices) << endl; // Output: 5
+    return 0;
+}
+
+```
+
+#### 🔍 Dry Run: Stock Buy and Sell
+
+Input: `prices = [7, 1, 5, 3, 6, 4]`
+
+| Day ($i$) | Price (`prices[i]`) | Current `bestBuy` | Potential Profit (`price - bestBuy`) | Updated `maxProfit` | Updated `bestBuy` |
+| --- | --- | --- | --- | --- | --- |
+| Start | `7` | `7` | — | `0` | `7` |
+| **Day 1** | `1` | `7` | $1 - 7 = -6$ (No profit) | `0` | **`1`** |
+| **Day 2** | `5` | `1` | $5 - 1 = 4$ | **`4`** | `1` |
+| **Day 3** | `3` | `1` | $3 - 1 = 2$ | `4` | `1` |
+| **Day 4** | `6` | `1` | $6 - 1 = 5$ | **`5`** | `1` |
+| **Day 5** | `4` | `1` | $4 - 1 = 3$ | `5` | `1` |
+
+🎯 Maximum Profit = `5**` (Buy at `1`, Sell at `6`)
+
+---
+
+⭐ *If you find this repository helpful, consider leaving a star!*
 

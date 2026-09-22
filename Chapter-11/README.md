@@ -94,7 +94,6 @@ int main() {
     }
     return 0;
 }
-
 ```
 
 ---
@@ -151,7 +150,6 @@ int main() {
     cout << "Majority Element: " << majorityElementSorting(nums) << endl; // Output: 2
     return 0;
 }
-
 ```
 
 > 💡 **Quick Note on Sorting:** If a majority element occupies $> n/2$ positions, it will **always** reside at index `nums[n / 2]` after sorting, meaning `sort()` followed by `return nums[n / 2];` also works in $O(n \log n)$.
@@ -176,7 +174,6 @@ Steps:
    - If nums[i] == ans, freq++.
    - Else freq--.
 3. Return ans.
-
 ```
 
 ```cpp
@@ -208,7 +205,6 @@ int main() {
     cout << "Majority Element: " << majorityElement(nums) << endl; // Output: 2
     return 0;
 }
-
 ```
 
 ---

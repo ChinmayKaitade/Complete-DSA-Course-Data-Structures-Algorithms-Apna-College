@@ -48,7 +48,6 @@ int main() {
 
     return 0;
 }
-
 ```
 
 ---
@@ -74,7 +73,6 @@ int main() {
     cout << "arr[0] = " << arr[0] << endl; // Output: 999
     return 0;
 }
-
 ```
 
 ---
@@ -114,7 +112,6 @@ int main() {
 
     return 0;
 }
-
 ```
 
 ---
@@ -162,6 +159,5 @@ int main() {
 
     return 0;
 }
-
 ```
 

@@ -54,7 +54,6 @@ for (int i = 2; i * i <= n; i++) {
         break;
     }
 }
-
 ```
 
 - **Loop Bound:** Runs while $i^2 \le n \implies i \le \sqrt{n}$.
@@ -75,7 +74,6 @@ for (int i = 0; i < n - 1; i++) {
     }
     swap(arr[i], arr[minIdx]);
 }
-
 ```
 
 - **Total Comparisons:** $(n - 1) + (n - 2) + \dots + 1 = \frac{n(n - 1)}{2} = \frac{n^2 - n}{2}$
@@ -91,7 +89,6 @@ int factorial(int n) {
     if (n == 0) return 1;
     return n * factorial(n - 1);
 }
-
 ```
 
 - **Recurrence Relation:** $T(n) = T(n - 1) + O(1)$
@@ -108,7 +105,6 @@ int fib(int n) {
     if (n == 0 || n == 1) return n;
     return fib(n - 1) + fib(n - 2);
 }
-
 ```
 
 - **Recurrence Relation:** $T(n) = T(n - 1) + T(n - 2) + O(1)$
@@ -138,7 +134,6 @@ void merge(int arr[], int si, int mid, int ei) {
         arr[idx] = temp[x++];
     }
 }
-
 ```
 
 - **Traversal:** Touches each element between `si` and `ei` at most twice (once to merge into `temp`, once to copy back). If $k = ei - si + 1$:
@@ -159,7 +154,6 @@ void mergeSort(int arr[], int si, int ei) {
 
     merge(arr, si, mid, ei);       // O(n)
 }
-
 ```
 
 - **Recurrence Relation:**

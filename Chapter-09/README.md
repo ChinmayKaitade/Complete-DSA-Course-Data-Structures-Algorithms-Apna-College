@@ -25,7 +25,6 @@ int main() {
 
     return 0;
 }
-
 ```
 
 ---
@@ -55,7 +54,6 @@ cout << "Element at 1: " << nums.at(1) << endl; // 20
 
 nums.pop_back(); // Removes 30
 cout << "Size after pop: " << nums.size() << endl; // 2
-
 ```
 
 ---
@@ -96,7 +94,6 @@ cout << "Size: " << v.size() << ", Capacity: " << v.capacity() << endl; // Size:
 
 v.push_back(5);
 cout << "Size: " << v.size() << ", Capacity: " << v.capacity() << endl; // Size: 5, Cap: 8
-
 ```
 
 ---
@@ -134,5 +131,4 @@ int main() {
     cout << "Single Unique Number = " << singleNumber(nums) << endl; // Output: 4
     return 0;
 }
-
 ```

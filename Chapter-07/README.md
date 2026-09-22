@@ -68,7 +68,6 @@ void sample() {
     }
     // y is inaccessible here
 }
-
 ```
 
 ### 🔹 Global Scope
@@ -83,7 +82,6 @@ int globalVar = 100; // Global scope
 void printVal() {
     cout << globalVar << endl; // Accessible
 }
-
 ```
 
 ---
@@ -103,7 +101,6 @@ Modifiers alter the default memory size or signedness of primitive integer and c
 ```cpp
 unsigned int positiveOnly = 4000000000U; // Valid (range 0 to ~4.29 billion)
 long long bigNumber = 9223372036854775807LL;
-
 ```
 
 ## 📝 Homework Solutions: Bitwise Tricks & Integer Reversal
@@ -181,7 +178,6 @@ int main() {
     cout << (isPowerOfTwoBits(n) ? "Power of 2" : "NOT a power of 2") << endl;
     return 0;
 }
-
 ```
 
 ---
@@ -223,6 +219,5 @@ int main() {
     cout << "Reversed Integer: " << reverseInteger(n) << endl;
     return 0;
 }
-
 ```
 
